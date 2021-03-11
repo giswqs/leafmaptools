@@ -8,7 +8,7 @@
 
 
 -   Free software: MIT license
--   Documentation: https://giswqs.github.io/leafmaptools
+-   Documentation: https://leafmaptools.gishub.org
     
 
 ## Features
