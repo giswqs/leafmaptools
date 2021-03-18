@@ -17,7 +17,8 @@
 
 ## Features
 
--   TODO
+For the the Wiki contains some [feature ideas](https://github.com/giswqs/leafmaptools/wiki/Feature-ideas). Early prototypes can be found in the [prototypes](https://github.com/giswqs/leafmaptools/tree/master/prototypes) folder.
+
 
 ## Credits
 
