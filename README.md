@@ -20,6 +20,11 @@
 For now the the Wiki contains some [feature ideas](https://github.com/giswqs/leafmaptools/wiki/Feature-ideas). Early prototypes can be found in the [prototypes](https://github.com/giswqs/leafmaptools/tree/master/prototypes) folder.
 
 
+## Sneak Preview
+
+![Screenshot](https://github.com/giswqs/leafmaptools/raw/master/prototypes/prototype1.gif \"Tools in action\")
+
+
 ## Credits
 
 This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [giswqs/pypackage](https://github.com/giswqs/pypackage) project template.
