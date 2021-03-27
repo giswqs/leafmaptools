@@ -22,7 +22,7 @@ For now the the Wiki contains some [feature ideas](https://github.com/giswqs/lea
 
 ## Sneak Preview
 
-![Screenshot](https://github.com/giswqs/leafmaptools/raw/master/prototypes/prototype1.gif \"Tools in action\")
+![Screenshot](https://github.com/giswqs/leafmaptools/raw/master/prototypes/prototype1.gif)
 
 
 ## Credits
