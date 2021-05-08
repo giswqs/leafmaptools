@@ -1,6 +1,7 @@
 # leafmaptools
 
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/leafmaptools/master?urlpath=lab/tree/examples/notebooks)
 [![image](https://img.shields.io/pypi/v/leafmaptools.svg)](https://pypi.python.org/pypi/leafmaptools)
 [![image](https://img.shields.io/conda/vn/conda-forge/leafmaptools.svg)](https://anaconda.org/conda-forge/leafmaptools)
 [![image](https://github.com/giswqs/leafmaptools/workflows/docs/badge.svg)](https://leafmaptools.gishub.org)
