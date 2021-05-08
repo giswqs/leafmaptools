@@ -3,7 +3,7 @@ A first prototype of some collection of tools.
 """
 
 import copy
-from typing import Iterator, Tuple
+from typing import Iterator
 
 import geojson
 from ipywidgets import (
@@ -14,18 +14,7 @@ from ipyleaflet import basemaps, Layer, Map, GeoJSON, TileLayer, WidgetControl
 from traitlets.utils.bunch import Bunch
 import mercantile
 
-
-def bounds(geojson_obj: dict) -> Tuple[Tuple[float, float], Tuple[float, float]]:
-    """Calculate the bounds of the GeoJSON object as [[south, west], [north, east]].
-    """
-    # Is there really no simpler/faster way to do this (without NumPy)?
-    coords = list(geojson.utils.coords(geojson_obj))
-    south = min(lat for lon, lat in coords)
-    north = max(lat for lon, lat in coords)
-    west = min(lon for lon, lat in coords)
-    east = max(lon for lon, lat in coords)
-    bounds = [[south, west], [north, east]]
-    return bounds
+from leafmaptools.utils import bounds
 
 
 def yield_basemap_dicts() -> Iterator[dict]:
