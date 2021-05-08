@@ -143,7 +143,7 @@ class StyleTextTool:
             else:
                 layer.style = json.loads(value)
 
-        def close(self, button):
+        def close(button):
             a_map.remove_control(wc)
 
         layout = Layout(width="28px", height="28px", padding="0px 0px 0px 4px")
