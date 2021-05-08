@@ -88,6 +88,7 @@ class MapRecorder:
         self.start.disabled = True
         self.play.disabled = True
         self.save.disabled = True
+        m = self.a_map
         for i, event in enumerate(self.recording):
             ts = event["ts"]
             center = event["center"]
