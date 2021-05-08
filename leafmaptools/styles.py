@@ -3,6 +3,7 @@ A styling tool...
 """
 
 import copy
+import json
 from typing import Iterator, Tuple
 
 from ipywidgets import (
@@ -10,6 +11,8 @@ from ipywidgets import (
     HBox, VBox, ToggleButton, IntSlider, FloatSlider, Dropdown
 )
 from ipyleaflet import Layer, Map, WidgetControl
+
+from leafmaptools.utils import is_valid_json
 
 
 class StyleTool:
@@ -104,4 +107,52 @@ class StyleTool:
             self.widget = VBox([HBox([desc, q]), p, w, o])
 
         wc = WidgetControl(widget=self.widget, position=position, transparent_bg=transparent)
+        a_map.add_control(wc)
+
+
+class StyleTextTool:
+    """A textual tool to style another layer on a map with a text-based GUI.
+
+    :param m: The map object to which to add a styling widget.
+    :param layer: The layer object which is to be styled.
+    :param attr_name: The layer's attribute name storing the style object.
+        This is usually one of: "style", "hover_style", and "point_style"
+    :param position: The map corner where this widget will be placed.
+    
+    TODO: The JSON textarea should reflect changes to the layer triggered by
+          others. 
+    """
+    def __init__(self,
+        position: str = "bottomleft",
+        attr_name: str = "style",
+        kind: str = "stroke",
+        orientation: str = "horizontal",
+        transparent: bool = False,
+        a_map: Map = None,
+        layer: Layer = None,
+        place_control: bool = True
+    ):
+        def updated(change):
+            """Called after each single-letter edit of the JSON in the textarea.
+            """
+            if change["type"] != "change":
+                return
+            value = change["owner"].value
+            if not is_valid_json(value):
+                return
+            else:
+                layer.style = json.loads(value)
+
+        def close(self, button):
+            a_map.remove_control(wc)
+
+        layout = Layout(width="28px", height="28px", padding="0px 0px 0px 4px")
+        btn = Button(tooltip="Close", icon="close", layout=layout)
+        btn.on_click(close)
+        ta = Textarea(value=json.dumps(getattr(layer, attr_name), indent=2))
+        ta.layout.width = "200px"
+        ta.observe(updated)
+        header = HBox([HTML(f"<i>{attr_name} (JSON)</i>"), btn])
+        ui = VBox([header, ta])
+        wc = WidgetControl(widget=ui, position=position, transparent_bg=True)
         a_map.add_control(wc)
