@@ -25,8 +25,8 @@ setup_requirements = [ ]
 test_requirements = [ ]
 
 setup(
-    author="Qiusheng Wu",
-    author_email='giswqs@gmail.com',
+    author="Dinu Gherman",
+    author_email='gherman@darwin.in-berlin.de',
     python_requires='>=3.5',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -43,7 +43,7 @@ setup(
     dependency_links=dependency_links,
     license="MIT license",
     long_description=readme,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
     include_package_data=True,
     keywords='leafmaptools',
     name='leafmaptools',
